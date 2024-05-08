@@ -2,7 +2,7 @@
 
 ## Description
 
-a service that shortens links
+service that shortens links
 
 ## Install
 
@@ -63,5 +63,5 @@ You can [install it locally](https://www.postgresql.org/download/) or use [docke
 
 ## Contact
 
-Responsible Dmytro Koziuk
-The primary contact for this project is  https://t.me/zellti
+Responsible 
+The primary contact for this project is  [//]: # (TODO: place link to your telegram and email)
