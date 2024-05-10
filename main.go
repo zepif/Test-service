@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-  "https://github.com/zepif/Test-service/internal/cli"
+    "github.com/zepif/Test-service/internal/cli"
 )
 
 func main() {

@@ -17,7 +17,8 @@ func (s *service) router() chi.Router {
     ),
   )
   r.Route("/integrations/Test-service", func(r chi.Router) {
-    // configure endpoints here
+        r.Post("/create_short_link", handlers.GetNonce)
+		r.Get("/get_long_link", handlers.RefreshToken)
   })
 
   return r
