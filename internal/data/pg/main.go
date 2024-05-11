@@ -2,7 +2,7 @@ package pg
 
 import (
 	"gitlab.com/distributed_lab/kit/pgdb"
-	"gitlab.com/zepif/Test-service/internal/data"
+	"github.com/zepif/Test-service/internal/data"
 )
 
 func NewStorage(db *pgdb) data.URLStorage {

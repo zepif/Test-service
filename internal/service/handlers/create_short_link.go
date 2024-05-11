@@ -9,7 +9,6 @@ import (
 	"gitlab.com/distributed_lab/ape"
 	"gitlab.com/distributed_lab/ape/problems"
 	"github.com/zepif/Test-service/internal/data"
-	"github.com/zepif/Test-service/internal/service/storage"
 )
 
 func CreateShortURL(w http.ResponseWriter, r *http.Request) {

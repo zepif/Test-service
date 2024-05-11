@@ -3,8 +3,8 @@ package cli
 import (
     migrate "github.com/rubenv/sql-migrate"
     "gitlab.com/distributed_lab/logan/v3/errors"
-    "https://github.com/zepif/Test-service/internal/assets"
-    "https://github.com/zepif/Test-service/internal/config"
+    "github.com/zepif/Test-service/internal/assets"
+    "github.com/zepif/Test-service/internal/config"
 )
 
 var migrations = &migrate.EmbedFileSystemMigrationSource{

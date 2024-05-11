@@ -4,8 +4,8 @@ import (
     "github.com/alecthomas/kingpin"
     "gitlab.com/distributed_lab/kit/kv"
     "gitlab.com/distributed_lab/logan/v3"
-    "https://github.com/zepif/Test-service/internal/service"
-    "https://github.com/zepif/Test-service/internal/config"
+    "github.com/zepif/Test-service/internal/service"
+    "github.com/zepif/Test-service/internal/config"
 )
 
 func Run(args []string) bool {

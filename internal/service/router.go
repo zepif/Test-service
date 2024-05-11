@@ -1,7 +1,7 @@
 package service
 
 import (
-  "https://github.com/zepif/Test-service/internal/service/handlers"
+  "github.com/zepif/Test-service/internal/service/handlers"
   "github.com/go-chi/chi"
   "gitlab.com/distributed_lab/ape"
 )

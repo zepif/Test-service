@@ -8,7 +8,7 @@ import (
 	"github.com/fatih/structs"
 	"gitlab.com/distributed_lab/kit/pgdb"
 	"gitlab.com/distributed_lab/logan/v3/errors"
-	"github.com/zepif/internal/data"
+	"github.com/zepif/Test-service/internal/data"
 )
 
 const linksTableName = "URLStorage"

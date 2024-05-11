@@ -6,7 +6,7 @@ import (
 
     "gitlab.com/distributed_lab/logan/v3/errors"
     "gitlab.com/distributed_lab/kit/copus/types"
-    "https://github.com/zepif/Test-service/internal/config"
+    "github.com/zepif/Test-service/internal/config"
     "gitlab.com/distributed_lab/logan/v3"
 )
 
