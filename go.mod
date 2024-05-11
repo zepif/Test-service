@@ -1,4 +1,4 @@
-module Short_api
+module Test-service
 
 go 1.22.2
 
