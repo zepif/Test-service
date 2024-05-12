@@ -7,7 +7,6 @@ import (
 	"net/http"
 
 	"github.com/go-chi/chi"
-	"github.com/zepif/Test-service/internal/data"
 )
 
 type GetShortLinkResponse struct {
@@ -23,7 +22,7 @@ func GetShortLink(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	db := r.Context().Value(1).(data.MasterQ).New()
+	db := DB(r)
 	/*if !ok {
 		http.Error(w, "Failed to get data.urlstorage from context", http.StatusInternalServerError)
 		return

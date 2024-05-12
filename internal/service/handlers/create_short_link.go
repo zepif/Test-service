@@ -8,7 +8,6 @@ import (
 	"github.com/go-chi/render"
 	"gitlab.com/distributed_lab/ape"
 	"gitlab.com/distributed_lab/ape/problems"
-	"github.com/zepif/Test-service/internal/data"
 )
 
 func CreateShortURL(w http.ResponseWriter, r *http.Request) {
@@ -27,7 +26,7 @@ func CreateShortURL(w http.ResponseWriter, r *http.Request) {
 	hash := sha256.Sum256([]byte(originalURL))
 	shortURL := base64.RawURLEncoding.EncodeToString(hash[:6])
     
-    db := r.Context().Value(1).(data.MasterQ).New()
+    db := DB(r)
 	/*if !ok {
 		log.Error("failed to get data.urlstorage from context")
 		ape.RenderErr(w, problems.InternalError())
