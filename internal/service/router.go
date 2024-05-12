@@ -17,8 +17,8 @@ func (s *service) router() chi.Router {
     ),
   )
   r.Route("/integrations/Test-service", func(r chi.Router) {
-        r.Post("/create_short_link", handlers.GetShortLink)
-		r.Get("/get_long_link", handlers.CreateShortURL)
+        r.Post("/create_short_link", handlers.CreateShortURL)
+		r.Get("/get_long_link", handlers.GetShortLink) 
   })
 
   return r
