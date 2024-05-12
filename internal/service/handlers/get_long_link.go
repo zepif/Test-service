@@ -23,9 +23,9 @@ func GetShortLink(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	db := r.Context().Value(1).(data.URLStorage).New()
+	db := r.Context().Value(1).(data.MasterQ).New()
 	/*if !ok {
-		http.Error(w, "Failed to get data.URLStorage from context", http.StatusInternalServerError)
+		http.Error(w, "Failed to get data.urlstorage from context", http.StatusInternalServerError)
 		return
 	}*/
 

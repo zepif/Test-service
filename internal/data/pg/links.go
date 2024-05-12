@@ -11,14 +11,14 @@ import (
 	"github.com/zepif/Test-service/internal/data"
 )
 
-const linksTableName = "URLStorage"
+const linksTableName = "urlstorage"
 
 type linkQ struct {
 	db  *pgdb.DB
 	sql sq.StatementBuilderType
 }
 
-func newLinkQ(db *pgdb.DB) LinkQ {
+func newLinkQ(db *pgdb.DB) data.LinkQ {
 	return &linkQ{
 		db:  db,
 		sql: sq.StatementBuilder,

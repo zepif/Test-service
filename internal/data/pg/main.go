@@ -5,21 +5,21 @@ import (
 	"github.com/zepif/Test-service/internal/data"
 )
 
-func NewStorage(db *pgdb) data.URLStorage {
-    return &URLStorage {
+func NewStorage(db *pgdb) data.MasterQ {
+    return &masterQ {
         db: db.Clone(),
     }
 }
 
-type URLStorage struct {
+type masterQ struct {
     db *pgdb.DB
 }
 
-func (m *URLStorage) New() data.URLStorage {
+func (m *masterQ) New() data.MasterQ {
     return NewStorage(m.db)
 }
 
-func (m *URLStorage) Link() data.LinkQ {
+func (m *masterQ) Link() data.LinkQ {
 	return newLinkQ(m.db)
 }
 

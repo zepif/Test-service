@@ -27,9 +27,9 @@ func CreateShortURL(w http.ResponseWriter, r *http.Request) {
 	hash := sha256.Sum256([]byte(originalURL))
 	shortURL := base64.RawURLEncoding.EncodeToString(hash[:6])
     
-    db := r.Context().Value(1).(data.URLStorage).New()
+    db := r.Context().Value(1).(data.MasterQ).New()
 	/*if !ok {
-		log.Error("failed to get data.URLStorage from context")
+		log.Error("failed to get data.urlstorage from context")
 		ape.RenderErr(w, problems.InternalError())
 		return
 	}*/

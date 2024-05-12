@@ -1,6 +1,6 @@
 package data
 
-type URLStorage interface {
-	New() URLStorage
+type MasterQ interface {
+	New() MasterQ
 	Link() LinkQ
 }
