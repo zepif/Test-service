@@ -5,8 +5,7 @@ on:
       - 'master'
       - 'main'
 
-permissions:
-  contents: write
+permissions: write-all
 
 env:
   CI_JOB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
