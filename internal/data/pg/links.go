@@ -13,11 +13,6 @@ import (
 
 const linksTableName = "URLStorage"
 
-type LinkQ interface {
-	Insert(fullURL, shortURL string) error
-	Get(shortURL string) (string, error)
-}
-
 type linkQ struct {
 	db  *pgdb.DB
 	sql sq.StatementBuilderType

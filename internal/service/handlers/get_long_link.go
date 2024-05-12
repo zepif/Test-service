@@ -1,6 +1,7 @@
 package handlers
 
 import (
+    "strconv"
 	"database/sql"
 	"encoding/json"
 	"net/http"
@@ -15,17 +16,18 @@ type GetShortLinkResponse struct {
 }
 
 func GetShortLink(w http.ResponseWriter, r *http.Request) {
-	id, err := chi.URLParamUint64(r, "id")
+	uid := chi.URLParam(r, "id")
+    id, err := strconv.Atoi(uid)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
 
-	db, ok := r.Context().Value(data.ContextKey).(data.URLStorage)
-	if !ok {
+	db := r.Context().Value(1).(data.URLStorage).New()
+	/*if !ok {
 		http.Error(w, "Failed to get data.URLStorage from context", http.StatusInternalServerError)
 		return
-	}
+	}*/
 
 	linkQ := db.Link()
 	fullURL, shortURL, err := linkQ.Get(int64(id))

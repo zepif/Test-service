@@ -19,7 +19,7 @@ func CreateShortURL(w http.ResponseWriter, r *http.Request) {
 	}
 	if err := render.DecodeJSON(r.Body, &request); err != nil {
 		log.WithError(err).Error("failed to decode request body")
-		ape.RenderErr(w, problems.BadRequest(err))
+		//ape.RenderErr(w, problems.BadRequest(err))
 		return
 	}
 
@@ -27,12 +27,12 @@ func CreateShortURL(w http.ResponseWriter, r *http.Request) {
 	hash := sha256.Sum256([]byte(originalURL))
 	shortURL := base64.RawURLEncoding.EncodeToString(hash[:6])
     
-    db, ok := r.Context().Value(data.ContextKey).(data.URLStorage)
-	if !ok {
+    db := r.Context().Value(1).(data.URLStorage).New()
+	/*if !ok {
 		log.Error("failed to get data.URLStorage from context")
 		ape.RenderErr(w, problems.InternalError())
 		return
-	}
+	}*/
 
 	linkQ := db.Link()
 	if err := linkQ.Insert(originalURL, shortURL); err != nil {
