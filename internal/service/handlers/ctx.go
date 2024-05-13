@@ -4,15 +4,15 @@ import (
 	"context"
 	"net/http"
 
+	"github.com/zepif/Test-service/internal/data"
 	"gitlab.com/distributed_lab/logan/v3"
-    "github.com/zepif/Test-service/internal/data"
 )
 
 type ctxKey int
 
 const (
 	logCtxKey ctxKey = iota
-    dbCtxKey
+	dbCtxKey
 )
 
 func CtxLog(entry *logan.Entry) func(context.Context) context.Context {

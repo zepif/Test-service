@@ -18,28 +18,23 @@ func CreateShortURL(w http.ResponseWriter, r *http.Request) {
 	}
 	if err := render.DecodeJSON(r.Body, &request); err != nil {
 		log.WithError(err).Error("failed to decode request body")
-		//ape.RenderErr(w, problems.BadRequest(err))
+		ape.RenderErr(w, problems.BadRequest(err)[0])
 		return
 	}
 
 	originalURL := request.OriginalURL
 	hash := sha256.Sum256([]byte(originalURL))
-	shortURL := base64.RawURLEncoding.EncodeToString(hash[:6])
-    
-    db := DB(r)
-	/*if !ok {
-		log.Error("failed to get data.urlstorage from context")
-		ape.RenderErr(w, problems.InternalError())
-		return
-	}*/
+	ShortURL := base64.RawURLEncoding.EncodeToString(hash[:6])
+
+	db := DB(r)
 
 	linkQ := db.Link()
-	if err := linkQ.Insert(originalURL, shortURL); err != nil {
+	if err := linkQ.Insert(originalURL, ShortURL); err != nil {
 		log.WithError(err).Error("failed to save link")
 		ape.RenderErr(w, problems.InternalError())
 		return
 	}
 
-	log.WithField("short_url", shortURL).Info("link created")
-	ape.Render(w, map[string]string{"short_url": shortURL})
+	log.WithField("ShortURL", ShortURL).Info("link created")
+	ape.Render(w, map[string]string{"ShortURL": ShortURL})
 }

@@ -1,0 +1,18 @@
+allOf:
+  - $ref: '#/components/schemas/ComponentKey'
+  - type: object
+    required:
+      - attributes
+    properties:
+      attributes:
+        type: object
+        required:
+          - full_url
+          - short_url
+        properties:
+          full_url:
+            type: string
+            description: "Оригинальная ссылка"
+          short_url:
+            type: string
+            description: "Сокращенная ссылка"

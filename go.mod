@@ -5,7 +5,6 @@ go 1.22.2
 require (
 	github.com/Masterminds/squirrel v1.5.3
 	github.com/alecthomas/kingpin v2.2.6+incompatible
-	github.com/fatih/structs v1.1.0
 	github.com/go-chi/chi v4.1.2+incompatible
 	github.com/go-chi/render v1.0.2
 	github.com/rubenv/sql-migrate v1.6.1
@@ -24,6 +23,7 @@ require (
 	github.com/getsentry/sentry-go v0.7.0 // indirect
 	github.com/go-gorp/gorp/v3 v3.1.0 // indirect
 	github.com/go-ozzo/ozzo-validation/v4 v4.2.1 // indirect
+	github.com/google/go-cmp v0.6.0 // indirect
 	github.com/google/jsonapi v0.0.0-20200226002910-c8283f632fb7 // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
 	github.com/jmoiron/sqlx v1.2.0 // indirect
@@ -45,8 +45,8 @@ require (
 	gitlab.com/distributed_lab/figure v2.1.1+incompatible // indirect
 	gitlab.com/distributed_lab/lorem v0.2.0 // indirect
 	gitlab.com/distributed_lab/running v0.0.0-20200706131153-4af0e83eb96c // indirect
-	golang.org/x/net v0.10.0 // indirect
-	golang.org/x/sys v0.15.0 // indirect
-	golang.org/x/text v0.14.0 // indirect
+	golang.org/x/net v0.25.0 // indirect
+	golang.org/x/sys v0.20.0 // indirect
+	golang.org/x/text v0.15.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 )

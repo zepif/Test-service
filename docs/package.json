@@ -2,7 +2,7 @@
   "name": "Test-service",
   "version": "1.0.0",
   "dependencies": {
-    "@tokend/redoc-cli": "^0.9.9",
+    "@tokend/redoc-cli": "^0.8.4",
     "swagger-repo": "^2.0.0-rc.15"
   },
   "private": true,

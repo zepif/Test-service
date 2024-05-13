@@ -1,8 +1,7 @@
 -- +migrate Up
 CREATE TABLE urlstorage (
-    id SERIAL PRIMARY KEY,
-    full_url TEXT NOT NULL,
-    short_url TEXT UNIQUE NOT NULL
+    ShortURL TEXT PRIMARY KEY,
+    FullURL TEXT NOT NULL
 );
 
 -- +migrate Down
