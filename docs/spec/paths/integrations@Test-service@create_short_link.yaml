@@ -1,0 +1,33 @@
+post:
+  tags:
+    - URLs
+  summary: Create short URL
+  description: Creates a short URL for the given URL
+  operationId: create_short_link
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            original_url:
+              type: string
+              description: The original URL
+              example: https://example.com/very/long/url
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              short_url:
+                type: string
+                description: The generated short URL
+                example: 6D9hkJ
+    '400':
+      description: Bad request
+    '500':
+      description: Internal server error

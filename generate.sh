@@ -3,8 +3,10 @@
 GENERATOR_IMAGE=tokend/openapi-generator:v0.1.0
 
 
-GENERATED="${GOPATH}/src/github.com/zepif/Test-service/resources"
-OPENAPI_DIR="${GOPATH}/src/github.com/zepif/Test-service/docs/web_deploy"
+GENERATED="${GOPATH}/src/gitlab.com/zepif/Test-service/resources"
+#GENERATED="./resources"
+OPENAPI_DIR="${GOPATH}/src/gitlab.com/zepif/Test-service/docs/web_deploy"
+#OPENAPI_DIR="./docs/web_deploy"
 PACKAGE_NAME=resources
 
 function printHelp {
@@ -50,10 +52,10 @@ function parseArgs {
 
 function generate {
     (cd docs && npm run build)
-    sudo docker run -v "${OPENAPI_DIR}":/openapi -v "${GENERATED}":/generated "${GENERATOR_IMAGE}" generate -pkg "${PACKAGE_NAME}" --raw-formats-as-types
+    docker run -v "${OPENAPI_DIR}":/openapi -v "${GENERATED}":/generated "${GENERATOR_IMAGE}" generate -pkg "${PACKAGE_NAME}" --raw-formats-as-types
     goimports -w ${GENERATED}
 }
 
 parseArgs "$@"
-echo ${OPENAPI_DIR} ${GENERATED} ${GENERATOR_IMAGE} ${PACKAGE_NAME}
+echo ${PATH} ${OPENAPI_DIR} ${GENERATED} ${GENERATOR_IMAGE} ${PACKAGE_NAME}
 generate
